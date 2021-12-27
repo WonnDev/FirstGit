@@ -13,6 +13,9 @@ class MyComponent2 extends React.Component{
             input: event.target.value
         })
     }
+    handleClickButton = () => {
+        alert('Click For What?')
+    }
 
     render(){
         
@@ -33,7 +36,10 @@ class MyComponent2 extends React.Component{
                     onChange={(event) => this.handleOnChangeInput(event)}
                 />
                 <div className="fourth">Output: {this.state.input}</div>
+            <div className="fifth">
+                <button onClick={ () => this.handleClickButton()}>Click me</button>
 
+            </div>
             </div>
             </>
         )
