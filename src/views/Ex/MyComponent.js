@@ -1,4 +1,5 @@
 import React from "react";
+import Child from "./Child";
 
 class MyComponent extends React.Component{
     
@@ -49,7 +50,7 @@ class MyComponent extends React.Component{
                     />
                 </form>
 
-            
+            <Child name={'1'} />
             
             </>
         )
