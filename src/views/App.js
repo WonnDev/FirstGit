@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.scss';
-import MyComponent1 from './Ex/MyComponent1';
-import MyComponent2 from './Ex/MyComponent2';
+import MyComponent from './Ex/MyComponent';
 function App() {
   return (
     <div className="App">
@@ -10,16 +9,9 @@ function App() {
         <p>
           Hello World with React.js (w)
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <MyComponent1/>
-        <MyComponent2/>
+        
+        
+        <MyComponent/>
       </header>
     </div>
   );
