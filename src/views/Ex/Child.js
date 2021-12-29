@@ -27,7 +27,7 @@ class Child extends React.Component {
                 </div>
             :
             <>
-                <div>Child Component: {this.props.name}</div>
+                <div>Child Component: {this.props.name}: {this.state.number}</div>
                 <div>
                     <button onClick={() => this.handleShowHide()}>Hide</button>
                 </div>
