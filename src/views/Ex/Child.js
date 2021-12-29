@@ -2,14 +2,35 @@ import React from "react";
 
 class Child extends React.Component {
 
+    state = {
+        show: false
+    }
 
+    handleShowHide = () => {
+        this.setState({
+            show: !this.state.show
+        })
+    }
 
     render() {
+
+        let {show} = this.state;
 
         return (
             //fragnent<></>
             <>
-            <div>Child Component: {this.props.name}</div>
+                {show === false &&
+                < div >
+                <button onClick={() => this.handleShowHide()}>Show</button>
+                </div> }
+            {show &&
+            <>
+                <div>Child Component: {this.props.name}</div>
+                <div>
+                    <button onClick={() => this.handleShowHide()}>Hide</button>
+                </div>
+            </>
+            }
             </>
         )
     }

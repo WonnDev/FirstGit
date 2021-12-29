@@ -26,6 +26,8 @@ class MyComponent extends React.Component{
 
     render(){
 
+        console.log('>>> checkprops: ',this.props)
+
         return(
             //fragnent<></>
             <> 
