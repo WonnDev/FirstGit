@@ -15,15 +15,17 @@ class Child extends React.Component {
     render() {
 
         let {show} = this.state;
+        let check = show === true ? 'show = true':'show = false' ;
+            console.log('>>>check conditional: ',check)
 
         return (
             //fragnent<></>
             <>
-                {show === false &&
+                {show === false ?
                 < div >
                 <button onClick={() => this.handleShowHide()}>Show</button>
-                </div> }
-            {show &&
+                </div>
+            :
             <>
                 <div>Child Component: {this.props.name}</div>
                 <div>
