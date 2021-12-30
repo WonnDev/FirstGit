@@ -13,8 +13,13 @@ class Child extends React.Component {
         })
     }
 
-    render() {
+    handleOnclickDelete = (item) => {
+        console.log('>>> handleOnclickDelete: ',item)
+        this.props.deleteAItems(item)
+    }
 
+    render() {
+        let {arrItems} = this.props;
         
         let {show} = this.state;
         let check = show === true ? 'show = true':'show = false' ;
@@ -29,8 +34,19 @@ class Child extends React.Component {
                 </div>
             :
             <>
-                <div>Child Component: {this.props.name}</div>
-                <div>{this.state.arrItems}</div>
+                
+                <div className="list">{
+                    arrItems.map((item)=>{
+                        return(
+                            <div key={item.id}>
+                                {item.name} - {item.number} <></>
+                                <span onClick={()=>this.handleOnclickDelete(item)}>x</span>
+                            </div>
+                        )
+                    })
+
+                }
+                </div>
                 <div>
                     <button onClick={() => this.handleShowHide()}>Hide</button>
                 </div>

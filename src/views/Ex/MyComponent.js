@@ -6,14 +6,27 @@ class MyComponent extends React.Component{
     
     state={
         arrItems: [
-            {name:'2',number:'2'},
+            {name:'1',number:'1'},
+            { name: '2', number: '2' },
+            { name: '3', number: '3' }
+            
         ]
     }
 
     addNewItems = (items) => {
         console.log('>>>check form dad: ',items)
+        // let currenItems= this.state.arrItems;
+        // currenItems.push(items)
         this.setState({
             arrItems: [...this.state.arrItems, items]
+            // arrItems : currenItems
+        })
+    }
+    deleteAItems = (Item) => {
+        let currenItems = this.state.arrItems;
+        currenItems = currenItems.filter(item=> item.id !== Item.id);
+        this.setState({
+            arrItems: currenItems
         })
     }
     
@@ -26,12 +39,13 @@ class MyComponent extends React.Component{
             //fragnent<></>
             <>
             <AddComponent
-            addNewItems = {this.addNewItems}
+                addNewItems = {this.addNewItems}      
             /> 
-                
-
-            <Child name={'1'}
-                arrItems = {this.state.arrItems}
+               
+           
+            <Child
+                arrItems={this.state.arrItems}
+                deleteAItems ={this.deleteAItems}
             />
             
             </>
