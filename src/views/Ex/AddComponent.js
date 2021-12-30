@@ -20,7 +20,19 @@ class AddComponent extends React.Component{
     }
     handleSubmit = (event) => {
         event.preventDefault()
+        if(!this.state.name || !this.state.number){
+            alert('Missing required params')
+            return;
+        }
         console.log('>>>checkdateinput: ',this.state)
+        this.props.addNewItems({
+            name : this.state.name,
+            number : this.state.number,
+        })
+        this.setState({
+            name:'',
+            number: ''
+        })
     }
 
 

@@ -4,6 +4,7 @@ class Child extends React.Component {
 
     state = {
         show: false
+        
     }
 
     handleShowHide = () => {
@@ -14,6 +15,7 @@ class Child extends React.Component {
 
     render() {
 
+        
         let {show} = this.state;
         let check = show === true ? 'show = true':'show = false' ;
             console.log('>>>check conditional: ',check)
@@ -27,7 +29,8 @@ class Child extends React.Component {
                 </div>
             :
             <>
-                <div>Child Component: {this.props.name}: {this.state.number}</div>
+                <div>Child Component: {this.props.name}</div>
+                <div>{this.state.arrItems}</div>
                 <div>
                     <button onClick={() => this.handleShowHide()}>Hide</button>
                 </div>
