@@ -42,7 +42,7 @@ class ListTodo extends React.Component{
                 listTodos : listTodosCopy,
                 editTodo: {}
             })
-            toast.success('Update Todo Done!')
+            toast.success('Updated Todo!')
             return;
         }
         
@@ -67,7 +67,12 @@ class ListTodo extends React.Component{
         let isEmptyObj = Object.keys(editTodo).length ===0
         console.log('>>> check empty object: ',isEmptyObj)
         return(
-        <div className="list-todo-container">
+            <>
+                <p>
+                    TODO Apps with React.js (W)
+                </p>
+
+             <div className="list-todo-container">
             <AddTodo
             addNewTodo={this.addNewTodo}
                 />
@@ -115,7 +120,8 @@ class ListTodo extends React.Component{
                 
                     
             </div>
-        </div>
+             </div>
+            </>
         )
     }
 
