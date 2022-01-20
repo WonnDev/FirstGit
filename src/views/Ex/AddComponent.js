@@ -3,6 +3,7 @@ import React from "react";
 class AddComponent extends React.Component{
 
     state = {
+        id:'',
         name: '',
         number: '',
     }
@@ -26,10 +27,12 @@ class AddComponent extends React.Component{
         }
         console.log('>>>checkdateinput: ',this.state)
         this.props.addNewItems({
+            id: this.state.id,
             name : this.state.name,
             number : this.state.number,
         })
         this.setState({
+            id:'',
             name:'',
             number: ''
         })

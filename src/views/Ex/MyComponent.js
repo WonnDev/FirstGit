@@ -6,9 +6,9 @@ class MyComponent extends React.Component{
     
     state={
         arrItems: [
-            {name:'1',number:'1'},
-            { name: '2', number: '2' },
-            { name: '3', number: '3' }
+            {id:'1', name:'1',number:'1'},
+            {id:'2', name: '2', number: '2' },
+            { id: '3', name: '3', number: '3' }
             
         ]
     }
